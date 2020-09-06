@@ -12,17 +12,13 @@ const CommentContainer = (props) => {
       .then((data) => setComments(data));
   }, []);
 
-  const [photos, setPhotos] = useState([]);
-  useEffect(() => {
-    fetch("https://randomuser.me/api/?results=1")
-      .then((response) => response.json())
-      .then((data) => setPhotos(data));
-  }, []);
+
+ 
   return (
     <div>
-      <Typography><h3>Comment Section :</h3></Typography>
-      {comments.map((comment) => (
-        <Comments comment={comment} photos={photos}></Comments>
+      <Typography variant="h5" component="h6">Comment Section :</Typography>
+      {comments.map((comment,idx) =>(
+         <Comments comment={comment} id={idx}></Comments>
       ))}
     </div>
   );

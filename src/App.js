@@ -5,6 +5,7 @@ import PostsContainer from "./Components/PostsContainer/PostsContainer";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import PostDetails from "./Components/PostDetails/PostDetails";
 import Header from "./Components/Header/Header";
+import NotFound from "./Components/NotFound/NotFound";
 
 function App() {
   return (
@@ -23,6 +24,10 @@ function App() {
 
           <Route exact path="/">
              <PostsContainer></PostsContainer>
+          </Route>
+
+          <Route path="*">
+             <NotFound></NotFound>
           </Route>
           
         </Switch>

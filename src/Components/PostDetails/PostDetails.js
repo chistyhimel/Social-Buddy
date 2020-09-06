@@ -9,6 +9,7 @@ import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import { Grid, Container } from "@material-ui/core";
+import "./PostDetails.css";
 
 const useStyles = makeStyles({
   root: {
@@ -41,17 +42,14 @@ const PostDetails = () => {
   const bull = <span className={classes.bullet}>•</span>;
   return (
     <Container>
-      {/* <Card>
-      <CardContent>
-      <h2>User id : {id}</h2>
-      <h3>Title : {title}</h3>
-      <p>{body}</p>
-      
-      </CardContent>
-      
-      </Card> */}
       <Card className={classes.root} variant="outlined">
         <CardContent>
+          <img
+            src={`https://randomuser.me/api/portraits/women/${id}.jpg`}
+            alt=""
+            className="post-img"
+          />
+
           <Typography
             className={classes.title}
             color="textSecondary"
@@ -63,12 +61,10 @@ const PostDetails = () => {
             Title : {title}
           </Typography>
           <Typography variant="body2" component="p">
-          Post : {body}
+            Post : {body}
           </Typography>
         </CardContent>
-        
       </Card>
-
 
       <Grid item xs={12} variant="outlined">
         <Card spacing={4}>

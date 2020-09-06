@@ -25,17 +25,18 @@ const useStyles = makeStyles({
 });
 
 export default function OutlinedCard(props) {
+  
     
-  const { id, email, body, name } = props.comment;
-  const classes = useStyles();
-  const bull = <span className={classes.bullet}>•</span>;
+    console.log(props.id)
+  const { id, email, body, name,postId } = props.comment;
+  const classes = useStyles(); 
 
   return (
     <Card className={classes.root} variant="outlined">
       <CardContent className="comment-container">
-      <div>
-        <img src="https://randomuser.me/api/portraits/med/men/75.jpg" alt=""/>
-      </div>
+      
+        <img src={`https://randomuser.me/api/portraits/men/${props.id}.jpg`} alt="" className="comment-img"/>
+      
       <div>
       <Typography variant="h6">
           Comment : {id}
