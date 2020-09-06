@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Posts from "../Posts/Posts";
-import Card from "../Card/Card";
 import { Grid, Container } from "@material-ui/core";
 
 const PostsContainer = () => {

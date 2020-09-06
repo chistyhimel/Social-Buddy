@@ -9,30 +9,27 @@ import NotFound from "./Components/NotFound/NotFound";
 
 function App() {
   return (
-    <div>
-      <Router>
+    <Router>
       <Header></Header>
-      
-        <Switch>
+
+      <Switch>
         <Route path="/home">
-             <PostsContainer></PostsContainer>
-          </Route>
+          <PostsContainer></PostsContainer>
+        </Route>
 
-          <Route path="/post/:postId">
-            <PostDetails></PostDetails>
-          </Route>
+        <Route path="/post/:postId">
+          <PostDetails></PostDetails>
+        </Route>
 
-          <Route exact path="/">
-             <PostsContainer></PostsContainer>
-          </Route>
+        <Route exact path="/">
+          <PostsContainer></PostsContainer>
+        </Route>
 
-          <Route path="*">
-             <NotFound></NotFound>
-          </Route>
-          
-        </Switch>
-      </Router>
-    </div>
+        <Route path="*">
+          <NotFound></NotFound>
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 

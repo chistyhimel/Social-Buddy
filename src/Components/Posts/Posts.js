@@ -1,6 +1,5 @@
 import React from "react";
 import "./Posts.css";
-import { Link } from "react-router-dom";
 import { Grid } from "@material-ui/core";
 import Card from "../Card/Card"
 

@@ -39,11 +39,11 @@ export default function OutlinedCard(props) {
         />
 
         <Typography variant="h5" component="h2">
-          Title : {title}
+          <strong>Title :</strong> {title}
         </Typography>
 
         <Typography variant="body2" component="p">
-          Post : {body}
+          <strong>Post :</strong> {body}
         </Typography>
       </CardContent>
       <CardActions>

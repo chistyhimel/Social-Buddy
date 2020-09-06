@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import Comments from "../Comments/Comments";
+import { useParams, Link } from "react-router-dom";
 import CommentContainer from "../CommentContainer/CommentContainer";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
-import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import { Grid, Container } from "@material-ui/core";
+import { Grid, Container, Button } from "@material-ui/core";
 import "./PostDetails.css";
+import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 
 const useStyles = makeStyles({
   root: {
@@ -36,13 +34,19 @@ const PostDetails = () => {
       .then((response) => response.json())
       .then((data) => setPost(data));
   }, []);
-  const { userId, id, title, body } = post;
+  const { id, title, body } = post;
 
   const classes = useStyles();
-  const bull = <span className={classes.bullet}>•</span>;
   return (
     <Container>
       <Card className={classes.root} variant="outlined">
+        <Link to="/home">
+          <Button>
+            {" "}
+            <ArrowBackIosIcon></ArrowBackIosIcon> Go back
+          </Button>
+        </Link>
+
         <CardContent>
           <img
             src={`https://randomuser.me/api/portraits/women/${id}.jpg`}

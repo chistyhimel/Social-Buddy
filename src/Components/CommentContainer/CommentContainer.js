@@ -18,7 +18,7 @@ const CommentContainer = (props) => {
     <div>
       <Typography variant="h5" component="h6">Comment Section :</Typography>
       {comments.map((comment,idx) =>(
-         <Comments comment={comment} id={idx}></Comments>
+         <Comments comment={comment} key={idx} id={idx}></Comments>
       ))}
     </div>
   );
